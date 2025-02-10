@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AnalizadorLexico (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AnalizadorLexico (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
