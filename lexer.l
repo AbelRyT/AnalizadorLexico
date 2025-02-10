@@ -3,19 +3,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Definición para exportar funciones en Windows */
+/* Definicion para exportar funciones en Windows */
 #ifdef _WIN32
   #define EXPORT __declspec(dllexport)
 #else
   #define EXPORT
 #endif
 
-/* Variables globales para el manejo del búfer de salida */
+/* Variables globales para el manejo del bufer de salida */
 static char* currentOutputBuffer = NULL;
 static size_t currentBufferSize = 0;
 static size_t currentOutputLength = 0;
 
-/* Función auxiliar para concatenar cadenas al búfer dinámico */
+/* Funcion auxiliar para concatenar cadenas al bufer dinamico */
 static void appendOutput(const char* str) {
     size_t len = strlen(str);
     if (currentOutputLength + len + 1 > currentBufferSize) {
@@ -36,7 +36,7 @@ static void appendOutput(const char* str) {
 %%
 
 "//".*  { 
-            appendOutput("Comentario de línea detectado\n"); 
+            appendOutput("Comentario de linea detectado\n"); 
         }
 
 "/*"([^*]|\*+[^*/])*\*+"/" { 
@@ -138,16 +138,16 @@ static void appendOutput(const char* str) {
 "--"               { appendOutput("Operador: decremento (--).\n"); }
 "+"                { appendOutput("Operador: suma (+).\n"); }
 "-"                { appendOutput("Operador: resta (-).\n"); }
-"*"                { appendOutput("Operador: multiplicación (*).\n"); }
-"/"                { appendOutput("Operador: división (/).\n"); }
-"%"                { appendOutput("Operador: módulo (%).\n"); }
-"+="               { appendOutput("Operador: suma asignación (+=).\n"); }
-"-="               { appendOutput("Operador: resta asignación (-=).\n"); }
-"*="               { appendOutput("Operador: multiplicación asignación (*=).\n"); }
-"/="               { appendOutput("Operador: división asignación (/=).\n"); }
-"%="               { appendOutput("Operador: módulo asignación (%=).\n"); }
+"*"                { appendOutput("Operador: multiplicacion (*).\n"); }
+"/"                { appendOutput("Operador: division (/).\n"); }
+"%"                { appendOutput("Operador: modulo (%).\n"); }
+"+="               { appendOutput("Operador: suma asignacion (+=).\n"); }
+"-="               { appendOutput("Operador: resta asignacion (-=).\n"); }
+"*="               { appendOutput("Operador: multiplicacion asignacion (*=).\n"); }
+"/="               { appendOutput("Operador: division asignacion (/=).\n"); }
+"%="               { appendOutput("Operador: modulo asignacion (%=).\n"); }
 
-"="                { appendOutput("Operador: asignación (=).\n"); }
+"="                { appendOutput("Operador: asignacion (=).\n"); }
 "=="               { appendOutput("Operador: igualdad (==).\n"); }
 "!="               { appendOutput("Operador: desigualdad (!=).\n"); }
 "<="               { appendOutput("Operador: menor o igual (<=).\n"); }
@@ -155,9 +155,9 @@ static void appendOutput(const char* str) {
 "<"                { appendOutput("Operador: menor que (<).\n"); }
 ">"                { appendOutput("Operador: mayor que (>).\n"); }
 
-"&&"               { appendOutput("Operador: AND lógico (&&).\n"); }
-"||"               { appendOutput("Operador: OR lógico (||).\n"); }
-"!"                { appendOutput("Operador: NOT lógico (!).\n"); }
+"&&"               { appendOutput("Operador: AND logico (&&).\n"); }
+"||"               { appendOutput("Operador: OR logico (||).\n"); }
+"!"                { appendOutput("Operador: NOT logico (!).\n"); }
 
 "~"                { appendOutput("Operador: NOT bit a bit (~).\n"); }
 "&"                { appendOutput("Operador: AND bit a bit (&).\n"); }
@@ -165,23 +165,23 @@ static void appendOutput(const char* str) {
 "^"                { appendOutput("Operador: XOR bit a bit (^).\n"); }
 "<<"               { appendOutput("Operador: desplazamiento a la izquierda (<<).\n"); }
 ">>"               { appendOutput("Operador: desplazamiento a la derecha (>>).\n"); }
-"&="               { appendOutput("Operador: AND bit a bit asignación (&=).\n"); }
-"|="               { appendOutput("Operador: OR bit a bit asignación (|=).\n"); }
-"^="               { appendOutput("Operador: XOR bit a bit asignación (^=).\n"); }
-"<<="              { appendOutput("Operador: desplazamiento a la izquierda asignación (<<=).\n"); }
-">>="              { appendOutput("Operador: desplazamiento a la derecha asignación (>>=).\n"); }
+"&="               { appendOutput("Operador: AND bit a bit asignacion (&=).\n"); }
+"|="               { appendOutput("Operador: OR bit a bit asignacion (|=).\n"); }
+"^="               { appendOutput("Operador: XOR bit a bit asignacion (^=).\n"); }
+"<<="              { appendOutput("Operador: desplazamiento a la izquierda asignacion (<<=).\n"); }
+">>="              { appendOutput("Operador: desplazamiento a la derecha asignacion (>>=).\n"); }
 
 "=>"               { appendOutput("Operador: lambda (=>).\n"); }
 "??"               { appendOutput("Operador: null-coalescing (??).\n"); }
-"??="              { appendOutput("Operador: null-coalescing asignación (??=).\n"); }
+"??="              { appendOutput("Operador: null-coalescing asignacion (??=).\n"); }
 "?"                { appendOutput("Operador: condicional (?).\n"); }
 ":"                { appendOutput("Operador: dos puntos (:).\n"); }
 ";"                { appendOutput("Operador: punto y coma (;).\n"); }
 ","                { appendOutput("Operador: coma (,).\n"); }
 "."                { appendOutput("Operador: punto (.).\n"); }
 
-"("                { appendOutput("Delimitador: paréntesis izquierdo (().\n"); }
-")"                { appendOutput("Delimitador: paréntesis derecho ()).\n"); }
+"("                { appendOutput("Delimitador: parentesis izquierdo (().\n"); }
+")"                { appendOutput("Delimitador: parentesis derecho ()).\n"); }
 "{"                { appendOutput("Delimitador: llave izquierda ({).\n"); }
 "}"                { appendOutput("Delimitador: llave derecha (}).\n"); }
 "["                { appendOutput("Delimitador: corchete izquierdo ([).\n"); }
@@ -190,25 +190,25 @@ static void appendOutput(const char* str) {
 
 "0[xX][0-9a-fA-F]+" {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número hexadecimal: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero hexadecimal: %s\n", yytext);
     appendOutput(buffer);
 }
 
 "0[bB][01]+" {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número binario: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero binario: %s\n", yytext);
     appendOutput(buffer);
 }
 
 [0-9]+\.[0-9]+([eE][-+]?[0-9]+)?[fFdD]? {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número flotante: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero flotante: %s\n", yytext);
     appendOutput(buffer);
 }
 
 [0-9]+ {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número entero: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero entero: %s\n", yytext);
     appendOutput(buffer);
 }
 
@@ -223,7 +223,7 @@ static void appendOutput(const char* str) {
 
 \'([^\\\']|\\.)\' {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Carácter: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Caracter: %s\n", yytext);
     appendOutput(buffer);
 }
 
@@ -235,23 +235,23 @@ static void appendOutput(const char* str) {
 }
 
 
-[ \t\r\n]+    { /* Ignorar espacios y saltos de línea */ }
+[ \t\r\n]+    { /* Ignorar espacios y saltos de linea */ }
 
 
 . {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Carácter desconocido: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Caracter desconocido: %s\n", yytext);
     appendOutput(buffer);
 }
 
 %%
 
-/* Función exportada para realizar el análisis léxico. Recibe una cadena 'input'
-   con el código a analizar y retorna un puntero a un búfer dinámico con el resultado.
+/* Funcion exportada para realizar el analisis lexico. Recibe una cadena 'input'
+   con el codigo a analizar y retorna un puntero a un bufer dinamico con el resultado.
    Se recomienda que, una vez procesado el resultado, se invoque LiberarMemoria para liberar la memoria asignada.
 */
 EXPORT char* analizarLexico(const char* input) {
-    /* Si existe un búfer previo se libera antes de iniciar un nuevo análisis */
+    /* Si existe un bufer previo se libera antes de iniciar un nuevo analisis */
     if (currentOutputBuffer != NULL) {
         free(currentOutputBuffer);
         currentOutputBuffer = NULL;
@@ -264,7 +264,7 @@ EXPORT char* analizarLexico(const char* input) {
     currentOutputBuffer[0] = '\0';
     currentOutputLength = 0;
 
-    /* Configuramos el escáner para leer desde la cadena 'input' */
+    /* Configuramos el escaner para leer desde la cadena 'input' */
     YY_BUFFER_STATE bufferState = yy_scan_string(input);
     yylex();
     yy_delete_buffer(bufferState);
@@ -272,8 +272,8 @@ EXPORT char* analizarLexico(const char* input) {
     return currentOutputBuffer;
 }
 
-/* Función exportada para liberar la memoria asignada al búfer generado por analizarLexico.
-   El parámetro 'ptr' debe ser el puntero retornado por analizarLexico.
+/* Funcion exportada para liberar la memoria asignada al bufer generado por analizarLexico.
+   El parametro 'ptr' debe ser el puntero retornado por analizarLexico.
 */
 EXPORT void LiberarMemoria(char* ptr) {
     if (ptr != NULL) {
@@ -285,4 +285,4 @@ EXPORT void LiberarMemoria(char* ptr) {
     }
 }
 
-/* No se define main() ya que se compilará como DLL */
+/* No se define main() ya que se compilara como DLL */

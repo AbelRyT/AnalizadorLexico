@@ -662,19 +662,19 @@ char *yytext;
 #include <stdlib.h>
 #include <string.h>
 
-/* Definición para exportar funciones en Windows */
+/* Definicion para exportar funciones en Windows */
 #ifdef _WIN32
   #define EXPORT __declspec(dllexport)
 #else
   #define EXPORT
 #endif
 
-/* Variables globales para el manejo del búfer de salida */
+/* Variables globales para el manejo del bufer de salida */
 static char* currentOutputBuffer = NULL;
 static size_t currentBufferSize = 0;
 static size_t currentOutputLength = 0;
 
-/* Función auxiliar para concatenar cadenas al búfer dinámico */
+/* Funcion auxiliar para concatenar cadenas al bufer dinamico */
 static void appendOutput(const char* str) {
     size_t len = strlen(str);
     if (currentOutputLength + len + 1 > currentBufferSize) {
@@ -929,7 +929,7 @@ case 1:
 YY_RULE_SETUP
 #line 38 ".\\lexer.l"
 { 
-            appendOutput("Comentario de línea detectado\n"); 
+            appendOutput("Comentario de linea detectado\n"); 
         }
 	YY_BREAK
 case 2:
@@ -1407,47 +1407,47 @@ YY_RULE_SETUP
 case 96:
 YY_RULE_SETUP
 #line 141 ".\\lexer.l"
-{ appendOutput("Operador: multiplicación (*).\n"); }
+{ appendOutput("Operador: multiplicacion (*).\n"); }
 	YY_BREAK
 case 97:
 YY_RULE_SETUP
 #line 142 ".\\lexer.l"
-{ appendOutput("Operador: división (/).\n"); }
+{ appendOutput("Operador: division (/).\n"); }
 	YY_BREAK
 case 98:
 YY_RULE_SETUP
 #line 143 ".\\lexer.l"
-{ appendOutput("Operador: módulo (%).\n"); }
+{ appendOutput("Operador: modulo (%).\n"); }
 	YY_BREAK
 case 99:
 YY_RULE_SETUP
 #line 144 ".\\lexer.l"
-{ appendOutput("Operador: suma asignación (+=).\n"); }
+{ appendOutput("Operador: suma asignacion (+=).\n"); }
 	YY_BREAK
 case 100:
 YY_RULE_SETUP
 #line 145 ".\\lexer.l"
-{ appendOutput("Operador: resta asignación (-=).\n"); }
+{ appendOutput("Operador: resta asignacion (-=).\n"); }
 	YY_BREAK
 case 101:
 YY_RULE_SETUP
 #line 146 ".\\lexer.l"
-{ appendOutput("Operador: multiplicación asignación (*=).\n"); }
+{ appendOutput("Operador: multiplicacion asignacion (*=).\n"); }
 	YY_BREAK
 case 102:
 YY_RULE_SETUP
 #line 147 ".\\lexer.l"
-{ appendOutput("Operador: división asignación (/=).\n"); }
+{ appendOutput("Operador: division asignacion (/=).\n"); }
 	YY_BREAK
 case 103:
 YY_RULE_SETUP
 #line 148 ".\\lexer.l"
-{ appendOutput("Operador: módulo asignación (%=).\n"); }
+{ appendOutput("Operador: modulo asignacion (%=).\n"); }
 	YY_BREAK
 case 104:
 YY_RULE_SETUP
 #line 150 ".\\lexer.l"
-{ appendOutput("Operador: asignación (=).\n"); }
+{ appendOutput("Operador: asignacion (=).\n"); }
 	YY_BREAK
 case 105:
 YY_RULE_SETUP
@@ -1482,17 +1482,17 @@ YY_RULE_SETUP
 case 111:
 YY_RULE_SETUP
 #line 158 ".\\lexer.l"
-{ appendOutput("Operador: AND lógico (&&).\n"); }
+{ appendOutput("Operador: AND logico (&&).\n"); }
 	YY_BREAK
 case 112:
 YY_RULE_SETUP
 #line 159 ".\\lexer.l"
-{ appendOutput("Operador: OR lógico (||).\n"); }
+{ appendOutput("Operador: OR logico (||).\n"); }
 	YY_BREAK
 case 113:
 YY_RULE_SETUP
 #line 160 ".\\lexer.l"
-{ appendOutput("Operador: NOT lógico (!).\n"); }
+{ appendOutput("Operador: NOT logico (!).\n"); }
 	YY_BREAK
 case 114:
 YY_RULE_SETUP
@@ -1527,27 +1527,27 @@ YY_RULE_SETUP
 case 120:
 YY_RULE_SETUP
 #line 168 ".\\lexer.l"
-{ appendOutput("Operador: AND bit a bit asignación (&=).\n"); }
+{ appendOutput("Operador: AND bit a bit asignacion (&=).\n"); }
 	YY_BREAK
 case 121:
 YY_RULE_SETUP
 #line 169 ".\\lexer.l"
-{ appendOutput("Operador: OR bit a bit asignación (|=).\n"); }
+{ appendOutput("Operador: OR bit a bit asignacion (|=).\n"); }
 	YY_BREAK
 case 122:
 YY_RULE_SETUP
 #line 170 ".\\lexer.l"
-{ appendOutput("Operador: XOR bit a bit asignación (^=).\n"); }
+{ appendOutput("Operador: XOR bit a bit asignacion (^=).\n"); }
 	YY_BREAK
 case 123:
 YY_RULE_SETUP
 #line 171 ".\\lexer.l"
-{ appendOutput("Operador: desplazamiento a la izquierda asignación (<<=).\n"); }
+{ appendOutput("Operador: desplazamiento a la izquierda asignacion (<<=).\n"); }
 	YY_BREAK
 case 124:
 YY_RULE_SETUP
 #line 172 ".\\lexer.l"
-{ appendOutput("Operador: desplazamiento a la derecha asignación (>>=).\n"); }
+{ appendOutput("Operador: desplazamiento a la derecha asignacion (>>=).\n"); }
 	YY_BREAK
 case 125:
 YY_RULE_SETUP
@@ -1562,7 +1562,7 @@ YY_RULE_SETUP
 case 127:
 YY_RULE_SETUP
 #line 176 ".\\lexer.l"
-{ appendOutput("Operador: null-coalescing asignación (??=).\n"); }
+{ appendOutput("Operador: null-coalescing asignacion (??=).\n"); }
 	YY_BREAK
 case 128:
 YY_RULE_SETUP
@@ -1592,12 +1592,12 @@ YY_RULE_SETUP
 case 133:
 YY_RULE_SETUP
 #line 183 ".\\lexer.l"
-{ appendOutput("Delimitador: paréntesis izquierdo (().\n"); }
+{ appendOutput("Delimitador: parentesis izquierdo (().\n"); }
 	YY_BREAK
 case 134:
 YY_RULE_SETUP
 #line 184 ".\\lexer.l"
-{ appendOutput("Delimitador: paréntesis derecho ()).\n"); }
+{ appendOutput("Delimitador: parentesis derecho ()).\n"); }
 	YY_BREAK
 case 135:
 YY_RULE_SETUP
@@ -1624,7 +1624,7 @@ YY_RULE_SETUP
 #line 191 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número hexadecimal: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero hexadecimal: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -1633,7 +1633,7 @@ YY_RULE_SETUP
 #line 197 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número binario: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero binario: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -1642,7 +1642,7 @@ YY_RULE_SETUP
 #line 203 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número flotante: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero flotante: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -1651,7 +1651,7 @@ YY_RULE_SETUP
 #line 209 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Número entero: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Numero entero: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -1669,7 +1669,7 @@ YY_RULE_SETUP
 #line 224 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Carácter: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Caracter: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -1685,14 +1685,14 @@ YY_RULE_SETUP
 case 146:
 YY_RULE_SETUP
 #line 238 ".\\lexer.l"
-{ /* Ignorar espacios y saltos de línea */ }
+{ /* Ignorar espacios y saltos de linea */ }
 	YY_BREAK
 case 147:
 YY_RULE_SETUP
 #line 241 ".\\lexer.l"
 {
     char buffer[256];
-    snprintf(buffer, sizeof(buffer), "Carácter desconocido: %s\n", yytext);
+    snprintf(buffer, sizeof(buffer), "Caracter desconocido: %s\n", yytext);
     appendOutput(buffer);
 }
 	YY_BREAK
@@ -2590,12 +2590,12 @@ int main()
 #line 247 ".\\lexer.l"
 
 
-/* Función exportada para realizar el análisis léxico. Recibe una cadena 'input'
-   con el código a analizar y retorna un puntero a un búfer dinámico con el resultado.
+/* Funcion exportada para realizar el analisis lexico. Recibe una cadena 'input'
+   con el codigo a analizar y retorna un puntero a un bufer dinamico con el resultado.
    Se recomienda que, una vez procesado el resultado, se invoque LiberarMemoria para liberar la memoria asignada.
 */
 EXPORT char* analizarLexico(const char* input) {
-    /* Si existe un búfer previo se libera antes de iniciar un nuevo análisis */
+    /* Si existe un bufer previo se libera antes de iniciar un nuevo analisis */
     if (currentOutputBuffer != NULL) {
         free(currentOutputBuffer);
         currentOutputBuffer = NULL;
@@ -2608,7 +2608,7 @@ EXPORT char* analizarLexico(const char* input) {
     currentOutputBuffer[0] = '\0';
     currentOutputLength = 0;
 
-    /* Configuramos el escáner para leer desde la cadena 'input' */
+    /* Configuramos el escaner para leer desde la cadena 'input' */
     YY_BUFFER_STATE bufferState = yy_scan_string(input);
     yylex();
     yy_delete_buffer(bufferState);
@@ -2616,8 +2616,8 @@ EXPORT char* analizarLexico(const char* input) {
     return currentOutputBuffer;
 }
 
-/* Función exportada para liberar la memoria asignada al búfer generado por analizarLexico.
-   El parámetro 'ptr' debe ser el puntero retornado por analizarLexico.
+/* Funcion exportada para liberar la memoria asignada al bufer generado por analizarLexico.
+   El parametro 'ptr' debe ser el puntero retornado por analizarLexico.
 */
 EXPORT void LiberarMemoria(char* ptr) {
     if (ptr != NULL) {
@@ -2629,4 +2629,4 @@ EXPORT void LiberarMemoria(char* ptr) {
     }
 }
 
-/* No se define main() ya que se compilará como DLL */
+/* No se define main() ya que se compilara como DLL */
